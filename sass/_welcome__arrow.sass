@@ -1,0 +1,72 @@
+$ani-speed: 4s
+$ani-delay: 1s
+$ani-delay-2: 2s
+$ani-delay-3: 3s
+
+
+
+.welcome__arrow
+  position: absolute
+  bottom: 3%
+  width: 100px
+  height: 100px
+  // background-color: #888 
+
+.arrow 
+  opacity: 0
+  position: absolute
+  left: 36%
+  top: 75%
+  
+  transform-origin: 50% 50%
+  transform: translate3d(-50%, -50%, 0)
+
+
+.arrow-1 
+  animation: arrow-movement $ani-speed ease-in-out infinite
+
+.arrow-2 
+  animation: arrow-movement $ani-speed $ani-delay ease-in-out infinite
+
+.arrow-3 
+  animation: arrow-movement $ani-speed $ani-delay-2 ease-in-out infinite
+
+.arrow-4 
+  animation: arrow-movement $ani-speed $ani-delay-3 ease-in-out infinite
+
+
+.arrow:before,
+.arrow:after 
+  background: #fff
+  content: ''
+  display: block
+  height: 3px 
+  position: absolute
+  top: 0
+  left: 0
+  width: 30px
+
+
+.arrow:before 
+  transform: rotate(45deg) translateX(-23%)
+  transform-origin: top left
+
+
+.arrow:after 
+  transform: rotate(-45deg) translateX(23%)
+  transform-origin: top right
+
+
+// Animation
+@keyframes arrow-movement 
+  0%    
+    opacity: 0
+    top: 45%
+  
+  70% 
+    opacity: 1
+  
+  100%  
+    opacity: 0
+  
+

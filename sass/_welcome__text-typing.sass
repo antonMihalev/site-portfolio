@@ -17,14 +17,6 @@
 
 $key: white
 
-html
-  height: 100%
-
-// body
-//   display: flex
-//   height: 100%
-//   background-color: $key
-
 .word
   position: absolute
   margin: auto
@@ -32,3 +24,7 @@ html
   font: 700 normal 10rem/1.5 'Montserrat',sans-serif
   text-shadow: longshadow(1,darken($key,10%))
   z-index: 10
+  
+  @media (max-width: 769px)
+    font-size: 5rem
+     
