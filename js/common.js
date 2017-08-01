@@ -190,10 +190,8 @@ $(function() {
 // ----------------------welcome-canvas END--------------------//
 
 //-----------------------about Tilt.js---------//
-const tilt = $('.about__container').tilt();
-tilt.on('change', function({
-	
-}));  // parameters: event, transforms
+// const tilt = $('.about__container').tilt();
+  // parameters: event, transforms
 // tilt.on('tilt.mouseLeave', callback); // parameters: event
 // tilt.on('tilt.mouseEnter', callback); // parameters: event
 // Destroy instance
@@ -204,3 +202,8 @@ tilt.on('change', function({
 
 // Reset instance
 // tilt.tilt.reset.call(tilt);
+
+//------------------AOS----------------//
+AOS.init({
+  duration: 1200,
+});
