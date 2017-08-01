@@ -5,7 +5,7 @@ void 0!==c?null===c?void r.removeAttr(a,b):e&&"set"in e&&void 0!==(d=e.set(a,c,b
 
 $(function() {
 	// ----------------------Custom JS-------------------------//
-
+});
 	//-----------------------Text-Typing-----------------------//
 	var
   words = ['Hi, my name is Ant','I like WEB','Here I can translate','my ideas into reality'],
@@ -18,7 +18,7 @@ $(function() {
   skip_delay = 5,
   speed = 100;
 
-var wordflick = function(){
+	var wordflick = function(){
   setInterval(function(){
       if (forwards) {
         if(offset >= words[i].length){
@@ -50,53 +50,52 @@ var wordflick = function(){
       }
     	$('.word').text(part);
   },speed);
-};
+	};
 
-$(document).ready(function(){
+  $(document).ready(function(){
   wordflick();
-});
+  });
 	// ----------------------welcome-canvas--------------------//
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
 
-var shapes = [];
-var num = 50;
+  var shapes = [];
+  var num = 50;
 
-var staticXpos;
-var staticYpos;
+  var staticXpos;
+  var staticYpos;
 
-var opt = {
+  var opt = {
   shapecolor: "#666",
   radius: 2,
   distance: 200,
   circleopacity: 1,
   speed: .5
-};
-
-var w = canvas.width = window.innerWidth;
-var h = canvas.height = window.innerHeight;
-addEventListener('resize', function() {
+    };
+  var w = canvas.width = window.innerWidth;
+  var h = canvas.height = window.innerHeight;
+  addEventListener('resize', function() {
   w = canvas.width = window.innerWidth;
   h = canvas.height = window.innerHeight;
-});
-//helper functions
-function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+  });
+  //helper functions
+  function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  };
 
-function clearcanvas() {
-  ctx.clearRect(0, 0, w, h);
-}
+  function clearcanvas() {
+    ctx.clearRect(0, 0, w, h);
+  };
 
-function getCords(e) {
+  function getCords(e) {
   var rect = canvas.getBoundingClientRect();
   return {
     x: e.clientX - rect.left,
     y: e.clientY - rect.top
   };
-}
+  };
 
-function createShapes(Xpos, Ypos) {
+  function createShapes(Xpos, Ypos) {
   this.x = Xpos ? Xpos : random(0, w);
   this.y = Ypos ? Ypos : random(0, h);
   this.speed = opt.speed;
@@ -129,9 +128,9 @@ function createShapes(Xpos, Ypos) {
     this.x < 0 ? this.x = 0 : this.x;
     this.y < 0 ? this.y = 0 : this.y;
   };
-}
+  };
 
-function check(point1, rest) {
+  function check(point1, rest) {
   for (var j = 0; j < rest.length; j++) {
     var yd = point1.y - rest[j].y;
     var xd = point1.x - rest[j].x;
@@ -149,9 +148,9 @@ function check(point1, rest) {
       ctx.stroke();
     }
   }
-}
+  };
 
-function loop() {
+  function loop() {
   clearcanvas();
   shapes[0].x = staticXpos;
   shapes[0].y = staticYpos;
@@ -163,33 +162,45 @@ function loop() {
     check(shapes[i], shapes);
   }
   window.requestAnimationFrame(loop);
-}
+  };  
 
-function init() {
+  function init() {
   for (var i = 0; i < num; i++) {
     shapes.push(new createShapes());
   }
   window.requestAnimationFrame(loop);
-}
+  };
 
-//events
-canvas.addEventListener('mousemove', function(e) {
-  var pos = getCords(e);
-  staticXpos = pos.x;
-  staticYpos = pos.y;
-});
-canvas.addEventListener('click', function(e) {
-  var pos = getCords(e);
-  shapes.push(new createShapes(pos.x, pos.y));
-});
-canvas.addEventListener("contextmenu", function(e) {
-  e.preventDefault();
-  shapes.splice(shapes.length - 1, 1);
-});
+	//events
+	canvas.addEventListener('mousemove', function(e) {
+	  var pos = getCords(e);
+	  staticXpos = pos.x;
+	  staticYpos = pos.y;
+	});
+	canvas.addEventListener('click', function(e) {
+	  var pos = getCords(e);
+	  shapes.push(new createShapes(pos.x, pos.y));
+	});
+	canvas.addEventListener("contextmenu", function(e) {
+	  e.preventDefault();
+	  shapes.splice(shapes.length - 1, 1);
+	});
 
-init();
+	init();
 // ----------------------welcome-canvas END--------------------//
 
+//-----------------------about Tilt.js---------//
+const tilt = $('.about__container').tilt();
+tilt.on('change', function({
+	
+}));  // parameters: event, transforms
+// tilt.on('tilt.mouseLeave', callback); // parameters: event
+// tilt.on('tilt.mouseEnter', callback); // parameters: event
+// Destroy instance
+// tilt.tilt.destroy.call(tilt);
 
-});
+// Get values of instance
+// tilt.tilt.getValues.call(tilt); // returns [{},{},etc..]
 
+// Reset instance
+// tilt.tilt.reset.call(tilt);
