@@ -1,3 +1,38 @@
+<script
+  src="//code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
 <script src="//cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<!-- <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> -->
+<script type="text/javascript" src="libs/slick/slick.min.js"></script>
+<script>
+	var $jq = jQuery.noConflict();
+	$jq(document).ready(function() { 
+	  $jq('.experiance__slick').slick({
+	  	accessibility: true,
+	  	dots: true,
+	  	dotsClass: 'slick-dots',
+	  	// appendDots: $('')
+	  	// centerMode: true,
+	  	// centerPadding: '100px',
+	  	// edgeFriction: 1,
+	  	// respondTo: 'slider',
+	  	swipeToSlide: true,
+	  	mobileFirst: true,
+	  	focusOnSelect: true,
+	  	fade: true,
+	  	cssEase: 'ease-in',
+	  	infinite: true,
+	  	speed: 300,
+	  	slidesToShow: 1,
+	  	arrows: true,
+	  	prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+	  	nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>'
+	  });
+	});
+	
+
+	// $('.card__photo').slick();
+</script>
 <script src="js/scripts.min.js"></script>
 <script src="//unpkg.com/tilt.js@1.1.21/dest/tilt.jquery.min.js"></script>

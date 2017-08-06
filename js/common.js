@@ -207,3 +207,21 @@ $(function() {
 AOS.init({
   duration: 1200,
 });
+
+//-----------Modal-----------//
+var modal = document.querySelector('.modal');
+var vid = document.querySelector('.item__vid');
+// console.log(vid)
+vid.onclick = addModalClass;
+// console.log(modal);
+function addModalClass(){
+	modal.classList.add('add');
+}
+
+var cancell = document.querySelector('.cancell');
+console.log(cancell);
+cancell.onclick = removeModalClass;
+function removeModalClass(){
+	modal.classList.remove('add');
+}
+//-----------ModalEND----------//
